@@ -11,10 +11,10 @@ public class ProblemSet2 {
 	}
 	
 	public void sayHello() {
+		System.out.println("Please enter your first and last name.");
 		Scanner in = new Scanner(System.in);
 		String name = in.nextLine();
 		System.out.println("Hello, " + name);
-		in.close();
 	}
 	
 	public void gradeMe() {
@@ -40,13 +40,24 @@ public class ProblemSet2 {
 		System.out.println("What is your third test grade?");
 		double test3 =  in.nextDouble();
 		
-		double finalGrade = (homework1 + homework2 + homework3) / 3; 
+		double homeworkAverage = (homework1 + homework2 + homework3) / 3; 
+		double quizAverage = (quiz1 + quiz2 + quiz3) / 3;
+		double testAverage = (test1 + test2 + test3) / 3;
 		
-		in.close();
+		double finalGrade = (homeworkAverage * .15) + (quizAverage * .30) + (testAverage * .55);
+		
+		System.out.printf("Your final grade is %.2f\n",  finalGrade);
+		
 	}
 	
 	public void groupUs() {
-		
+		Scanner in = new Scanner(System.in);
+		System.out.println("Provide the number of students attending the field trip.");
+		double studentNumber = in.nextDouble();
+		System.out.println("Provide the number of teachers attending the field trip.");
+		double teacherNumber = in.nextDouble();
+		double totalPeople = studentNumber + teacherNumber + 1;
+
 	}
 	
 	public void info() {
