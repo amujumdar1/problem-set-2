@@ -40,8 +40,9 @@ public class ProblemSet2 {
 		System.out.println("What is your third test grade?");
 		double test3 =  in.nextDouble();
 		
-		double finalGrade = double (homework1 + homework2 + homework3) / 3; 
+		double finalGrade = (homework1 + homework2 + homework3) / 3; 
 		
+		in.close();
 	}
 	
 	public void groupUs() {
