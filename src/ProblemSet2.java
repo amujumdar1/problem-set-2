@@ -32,7 +32,6 @@ public class ProblemSet2 {
 		System.out.println("What is your third homework grade?");
 		double homework3 =  in.nextDouble();
 		
-		
 		System.out.println("What is your first quiz grade?");
 		double quiz1 =  in.nextDouble();
 		
@@ -75,32 +74,26 @@ public class ProblemSet2 {
 		System.out.println("Provide the number of teachers attending the field trip.");
 		int teacherNumber = in.nextInt();
 		
-		int totalPeople = studentNumber + teacherNumber + 1;
+		int totalPeople = studentNumber + teacherNumber;
 		
-		double busNumber = (double) totalPeople / 47; 
-		
-		System.out.println("You need " +  (int) Math.ceil(busNumber) + " buses." );
-		// uses the built in ceiling function to always round the number up
-		
-		int peoplePerBus;
-		
-		do {
-			int counter = 1;
+		int busNumber = totalPeople / 46;
+		// the number is forty six because the bus driver is the extra person
 			
-			peoplePerBus = totalPeople - 47;
+		int remainingPeople = totalPeople % 46; 
+		
+		switch (remainingPeople) {
+		
+			case 0:
+				System.out.println("You need" + busNumber + " bus(es)." );
+				break;
+				
+			default:
+				System.out.println("You need " + (busNumber + 1) + " bus(es)." );
+				System.out.println("The first " + busNumber + " buses need 47 people, while the " );
+				break;
+		}
 			
-			System.out.println("Bus #" + counter + " has " + peoplePerBus + "people.");
-			
-			counter++;
-			
-		} while (peoplePerBus > 0);
-		// int remainingPeople = totalPeople % 47;
-		
-		
-		
-		
-
-	}
+	}	
 	
 	public void info() {
 		Scanner in = new Scanner(System.in);
