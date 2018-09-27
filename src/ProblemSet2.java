@@ -1,28 +1,27 @@
 import java.util.Scanner;
 
 public class ProblemSet2 {
+	private static Scanner in;
+	
 	public static void main (String[] args) {
+		in = new Scanner(System.in);
 		ProblemSet2 ps2 = new ProblemSet2();
-		//ps2.sayHello();
-		//ps2.gradeMe();
+		ps2.sayHello();
+		ps2.gradeMe();
 		ps2.groupUs();
-		//ps2.info();
-		//ps2.initials();
+		ps2.info();
+		ps2.initials();
+		in.close();
 	}
 	
 	public void sayHello() {
 		System.out.println("Please enter your first and last name.");
-		
-		Scanner in = new Scanner(System.in);
-		
 		String name = in.nextLine();
 		
 		System.out.println("Hello, " + name);
 	}
 	
-	public void gradeMe() {
-		Scanner in = new Scanner(System.in);
-		
+	public void gradeMe() {		
 		System.out.println("What is your first homework grade?");
 		double homework1 =  in.nextDouble();
 		
@@ -66,38 +65,28 @@ public class ProblemSet2 {
 		
 	}
 	
-	public void groupUs() {
-		Scanner in = new Scanner(System.in);
+	public void groupUs() {		
 		System.out.println("Provide the number of students attending the field trip.");
 		int studentNumber = in.nextInt();
 		
 		System.out.println("Provide the number of teachers attending the field trip.");
+		
 		int teacherNumber = in.nextInt();
 		
 		int totalPeople = studentNumber + teacherNumber;
 		
-		int busNumber = totalPeople / 46;
-		// the number is forty six because the bus driver is the extra person
+		int busNumber = totalPeople / 47;
 			
-		int remainingPeople = totalPeople % 46; 
+		int remainingPeople = totalPeople % 47; 
 		
-		switch (remainingPeople) {
-		
-			case 0:
-				System.out.println("You need" + busNumber + " bus(es)." );
-				break;
-				
-			default:
-				System.out.println("You need " + (busNumber + 1) + " bus(es)." );
-				System.out.println("The first " + busNumber + " buses need 47 people, while the " );
-				break;
+		if (remainingPeople != 0) {
+			busNumber++;
 		}
 			
+		System.out.println("There will be a total of " + busNumber + " bus(es). One bus will have " + remainingPeople + " people. The rest will have 47 people.");
 	}	
 	
-	public void info() {
-		Scanner in = new Scanner(System.in);
-		
+	public void info() {		
 		System.out.println("Type your first name.");
 		String firstName = in.nextLine();
 		
@@ -123,9 +112,7 @@ public class ProblemSet2 {
 		
 	}
 	
-	public void initials() {
-		Scanner in = new Scanner(System.in);
-		
+	public void initials() {		
 		System.out.print("Please enter your first name: ");
 		char firstInitial = in.next().charAt(0);
 		
@@ -136,6 +123,5 @@ public class ProblemSet2 {
 		char thirdInitial = in.next().charAt(0);
 		
 		System.out.println("Your initials are " + firstInitial + secondInitial + thirdInitial + ".");
-		in.close();
 	}
 }
