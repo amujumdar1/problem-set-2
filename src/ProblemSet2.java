@@ -1,7 +1,9 @@
 import java.util.Scanner;
 
 public class ProblemSet2 {
+	
 	private static Scanner in;
+	// declares a Scanner object that is exclusive to the class and opened
 	
 	public static void main (String[] args) {
 		in = new Scanner(System.in);
@@ -63,6 +65,9 @@ public class ProblemSet2 {
 		
 		System.out.printf("Your final grade is %.2f\n",  finalGrade);
 		
+		in.nextLine();
+		// so that the next method will run smoothly
+		
 	}
 	
 	public void groupUs() {		
@@ -79,14 +84,21 @@ public class ProblemSet2 {
 			
 		int remainingPeople = totalPeople % 47; 
 		
-		if (remainingPeople != 0) {
+		if (remainingPeople != 0) { // checks to see if there needs to be an extra / first bus
 			busNumber++;
 		}
 			
-		System.out.println("There will be a total of " + busNumber + " bus(es). One bus will have " + remainingPeople + " people. The rest will have 47 people.");
+		System.out.println("There will be a total of " + busNumber + " bus(es)."
+		+ " One bus will have " + remainingPeople + " people. The rest will have 47 people.");
+		// making two lines so it's easier to read
+		
+		
+		in.nextLine(); 
+		// so that the next method will not merge the first and last name prompts 
 	}	
 	
 	public void info() {		
+		
 		System.out.println("Type your first name.");
 		String firstName = in.nextLine();
 		
@@ -105,9 +117,13 @@ public class ProblemSet2 {
 		System.out.println("Type your hometown.");
 		String hometown = in.nextLine();
 		
+		
 		System.out.println("NAME     : " + firstName + " " + lastName);
+		
 		System.out.println("GRADE    : " + grade);
+		
 		System.out.println("AGE      : " + age);
+		
 		System.out.println("HOMETOWN : " + hometown);
 		
 	}
